@@ -6,12 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import za.co.dubedivine.app.AutoActivity
 import za.co.dubedivine.app.R
 
 class MainActivityGridItemsAdapter : RecyclerView.Adapter<MainActivityGridItemsAdapter.GridItemVH>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GridItemVH {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_grid, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_grid,
+                parent,
+                false)
         return GridItemVH(view)
     }
 
@@ -29,9 +32,13 @@ class MainActivityGridItemsAdapter : RecyclerView.Adapter<MainActivityGridItemsA
             when (name) {
                 itemNames[0] -> {
                     imageView.setImageResource(R.drawable.money)
+
                 }
                 itemNames[1] -> {
                     imageView.setImageResource(R.drawable.ic_car)
+                    itemView.setOnClickListener({
+                        itemView.context.startActivity(AutoActivity.getStartActivity(itemView.context))
+                    })
                 }
                 itemNames[2] -> {
                     imageView.setImageResource(R.drawable.home)
