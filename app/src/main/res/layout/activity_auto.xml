@@ -13,11 +13,9 @@
         android:layout_height="match_parent"
         tools:context=".AutoActivity">
 
-
-
         <TextView
             android:layout_width="match_parent"
-            android:text="Hello"
+            android:text="Auto"
             android:background="@color/colorPrimary"
             android:textColor="@android:color/white"
             android:fontFamily="sans-serif-thin"
