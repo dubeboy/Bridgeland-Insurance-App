@@ -8,13 +8,14 @@ import android.support.v7.widget.GridLayoutManager
 import android.widget.TextView
 import kotlinx.android.synthetic.main.content_main.*
 import za.co.dubedivine.app.adapter.AutoAdapter
-import za.co.dubedivine.app.adapter.MainActivityGridItemsAdapter
+import za.co.dubedivine.app.adapter.HomeAdapater
 
-class AutoActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
+
 
     companion object {
         fun getStartActivity(context: Context): Intent {
-            return Intent(context, AutoActivity::class.java)
+            return Intent(context, HomeActivity::class.java)
         }
     }
 
@@ -24,11 +25,11 @@ class AutoActivity : AppCompatActivity() {
         setContentView(R.layout.content_main)
 
         recyclerView.layoutManager = GridLayoutManager(this, 3)
-        recyclerView.adapter = AutoAdapter()
+        recyclerView.adapter = HomeAdapater()
 
         // add the the motto string
 
         val header: TextView = findViewById(R.id.tvAbout) // todo should be tv header
-        header.text = getString(R.string.auto)
+        header.text = getString(R.string.home)
     }
 }

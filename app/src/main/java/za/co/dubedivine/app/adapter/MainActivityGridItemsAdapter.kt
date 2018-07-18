@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import za.co.dubedivine.app.AutoActivity
+import za.co.dubedivine.app.HomeActivity
 import za.co.dubedivine.app.R
 
 class MainActivityGridItemsAdapter : RecyclerView.Adapter<MainActivityGridItemsAdapter.GridItemVH>() {
@@ -31,47 +32,50 @@ class MainActivityGridItemsAdapter : RecyclerView.Adapter<MainActivityGridItemsA
             tvName.text = name
             when (name) {
                 itemNames[0] -> {
-                    imageView.setImageResource(R.drawable.money)
+                    imageView.setImageResource(R.drawable.ic_finance)
 
                 }
                 itemNames[1] -> {
-                    imageView.setImageResource(R.drawable.ic_car)
+                    imageView.setImageResource(R.drawable.ic_automobile)
                     itemView.setOnClickListener({
                         itemView.context.startActivity(AutoActivity.getStartActivity(itemView.context))
                     })
                 }
                 itemNames[2] -> {
-                    imageView.setImageResource(R.drawable.home)
+                    imageView.setImageResource(R.drawable.ic_house2)
+                    itemView.setOnClickListener({
+                        itemView.context.startActivity(HomeActivity.getStartActivity(itemView.context))
+                    })
                 }
                 itemNames[3] -> {
-                    imageView.setImageResource(R.drawable.shop)
+                    imageView.setImageResource(R.drawable.ic_office_building)
                 }
                 itemNames[4] -> {
-                    imageView.setImageResource(R.drawable.heart)
+                    imageView.setImageResource(R.drawable.ic_heart)
                 }
                 itemNames[5] -> {
-                    imageView.setImageResource(R.drawable.around)
+                    imageView.setImageResource(R.drawable.ic_travel)
                 }
                 itemNames[6] -> {
-                    imageView.setImageResource(R.drawable.account)
+                    imageView.setImageResource(R.drawable.ic_insurance)
                 }
                 itemNames[7] -> {
-                    imageView.setImageResource(R.drawable.quote)
+                    imageView.setImageResource(R.drawable.ic_qoute)
                     itemView.background = itemView.context.getDrawable(R.drawable.side_nav_bar);
                 }
                 itemNames[8] -> {
-                    imageView.setImageResource(R.drawable.share_outlined_button)
+                    imageView.setImageResource(R.drawable.ic_share)
                 }
                 itemNames[9] -> {
-                    imageView.setImageResource(R.drawable.pay)
+                    imageView.setImageResource(R.drawable.ic_pay)
                 }
 
                 itemNames[10] -> {
-                    imageView.setImageResource(R.drawable.chat)
+                    imageView.setImageResource(R.drawable.ic_msg)
                 }
 
                 itemNames[11] -> {
-                    imageView.setImageResource(R.drawable.refund)
+                    imageView.setImageResource(R.drawable.ic_claim)
                 }
 
 
@@ -80,7 +84,7 @@ class MainActivityGridItemsAdapter : RecyclerView.Adapter<MainActivityGridItemsA
     }
 
     companion object {
-        val itemNames: ArrayList<String> = arrayListOf("Finance",
+      private val itemNames: ArrayList<String> = arrayListOf("Finance",
                 "Auto",
                 "Home",
                 "Business",

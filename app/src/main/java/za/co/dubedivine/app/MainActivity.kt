@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -35,6 +36,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         recyclerView.layoutManager = GridLayoutManager(this, 3)
         recyclerView.adapter = MainActivityGridItemsAdapter()
+
+        // add the the motto string
+
+        val header: TextView = findViewById(R.id.tvAbout) // todo should be tv header
+        header.text = getString(R.string.motto)
     }
 
     override fun onBackPressed() {
