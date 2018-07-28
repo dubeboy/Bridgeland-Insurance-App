@@ -19,8 +19,7 @@ import java.security.KeyStore
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
 import android.view.WindowManager
-
-
+import za.co.dubedivine.app.MainActivity.Companion.NUM_ROW_ITEMS
 
 
 class FullscreenActivity : AppCompatActivity() {
@@ -37,7 +36,7 @@ class FullscreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fullscreen)
 
-        password_btns.layoutManager = GridLayoutManager(this, 3)
+        password_btns.layoutManager = GridLayoutManager(this, NUM_ROW_ITEMS)
         password_btns.adapter = NumberGridAdapter({ value: Int ->
             when (value) {
                 -1 -> {

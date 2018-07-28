@@ -3,6 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="200"
         app:showAsAction="never" />
+    <item android:id="@+id/action_contact_us"
+        android:title="@string/contact_us"
+        android:icon="@drawable/ic_perm_phone_msg_black_24dp"
+        android:orderInCategory="100"
+        app:showAsAction="always|withText" />
 </menu>

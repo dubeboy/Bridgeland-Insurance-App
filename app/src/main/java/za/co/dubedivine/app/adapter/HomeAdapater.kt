@@ -37,7 +37,6 @@ class HomeAdapater : RecyclerView.Adapter<HomeViewHolder>() {
             when (s) {
                 itemNames[0] -> {
                     imageView.setImageResource(R.drawable.ic_home_with_a_heart)
-
                 }
                 itemNames[1] -> {
                     imageView.setImageResource(R.drawable.ic_shopping_center)

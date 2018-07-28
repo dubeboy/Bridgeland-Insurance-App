@@ -1,5 +1,9 @@
 package za.co.dubedivine.app.adapter
 
+import android.graphics.Color
+import android.support.constraint.ConstraintLayout
+import android.support.v4.content.ContextCompat
+import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -25,56 +29,57 @@ class MainActivityGridItemsAdapter : RecyclerView.Adapter<MainActivityGridItemsA
         holder.bind(itemNames[position])
     }
 
-    class GridItemVH(v: View): RecyclerView.ViewHolder(v) {
+    class GridItemVH(v: View) : RecyclerView.ViewHolder(v) {
         val imageView: ImageView = v.findViewById(R.id.image_view)
         val tvName: TextView = v.findViewById(R.id.tv_item_name)
+        val constraintLayout: ConstraintLayout = v.findViewById(R.id.item_grid_constraint)
         fun bind(name: String) {
             tvName.text = name
             when (name) {
-                itemNames[0] -> {
+                "Finance" -> {
                     imageView.setImageResource(R.drawable.ic_finance)
 
                 }
-                itemNames[1] -> {
+                "Auto" -> {
                     imageView.setImageResource(R.drawable.ic_automobile)
                     itemView.setOnClickListener({
                         itemView.context.startActivity(AutoActivity.getStartActivity(itemView.context))
                     })
                 }
-                itemNames[2] -> {
+                "Home" -> {
                     imageView.setImageResource(R.drawable.ic_house2)
                     itemView.setOnClickListener({
                         itemView.context.startActivity(HomeActivity.getStartActivity(itemView.context))
                     })
                 }
-                itemNames[3] -> {
+                "Business" -> {
                     imageView.setImageResource(R.drawable.ic_office_building)
                 }
-                itemNames[4] -> {
+                "Life & Health" -> {
                     imageView.setImageResource(R.drawable.ic_heart)
                 }
-                itemNames[5] -> {
+                "Travel" -> {
                     imageView.setImageResource(R.drawable.ic_travel)
                 }
-                itemNames[6] -> {
+                "My Account" -> {
                     imageView.setImageResource(R.drawable.ic_insurance)
                 }
-                itemNames[7] -> {
+                "Quote" -> {
                     imageView.setImageResource(R.drawable.ic_qoute)
-                    itemView.background = itemView.context.getDrawable(R.drawable.side_nav_bar);
+                    constraintLayout.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.my_material_green))
                 }
-                itemNames[8] -> {
+                "Share App" -> {
                     imageView.setImageResource(R.drawable.ic_share)
                 }
-                itemNames[9] -> {
+                "Payments" -> {
                     imageView.setImageResource(R.drawable.ic_pay)
                 }
 
-                itemNames[10] -> {
+                "Messaging" -> {
                     imageView.setImageResource(R.drawable.ic_msg)
                 }
 
-                itemNames[11] -> {
+                "Claims" -> {
                     imageView.setImageResource(R.drawable.ic_claim)
                 }
 
@@ -84,16 +89,16 @@ class MainActivityGridItemsAdapter : RecyclerView.Adapter<MainActivityGridItemsA
     }
 
     companion object {
-      private val itemNames: ArrayList<String> = arrayListOf("Finance",
+        private val itemNames: ArrayList<String> = arrayListOf("Finance",
                 "Auto",
                 "Home",
+                "Travel",
                 "Business",
                 "Life & Health",
-                "Travel",
                 "My Account",
-                "Quote",
-                "ShareApp",
                 "Payments",
+                "Quote",
+                "Share App",
                 "Messaging",
                 "Claims"
         )
